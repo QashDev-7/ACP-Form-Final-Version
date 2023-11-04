@@ -406,6 +406,10 @@ label[for="bqpDetails"] {
   padding: 10px;
 }
 
+#DOD{
+  margin-top: 1rem;
+
+}
 .credit-card-form label {
   display: block;
   margin-bottom: 10px;
@@ -589,6 +593,10 @@ textarea {
     font-size: 13px;
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+  #DOD{
+    margin-top: 0rem;
+  
   }
 
   #yeslabel,
