@@ -1,0 +1,688 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Logo and Header */
+.logo-container {
+  padding: 10px;
+  text-align: center; /* Center the logo horizontally */
+}
+
+.logo {
+  max-width: 20rem; /* Make the logo responsive */
+  height: auto; /* Maintain the aspect ratio */
+  margin-top: 1rem;
+}
+
+/* Content Container */
+.content-container {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 900px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+#radio-select {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 900px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #002855;
+}
+
+/* Form Styles */
+form {
+  text-align: left;
+  padding: 10px; /* Add some padding to the form */
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #002855;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+#label-diclosre {
+  display: inline;
+  font-size: small;
+}
+
+/* Styling for the Submit button */
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .section {
+    padding: 10px;
+  }
+}
+
+/* School Name Field */
+#school-name-field {
+  margin-top: 20px;
+}
+
+#schoolName {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#householdSize {
+  margin-bottom: 1rem;
+  height: 2rem;
+}
+
+#schoolName {
+  margin-bottom: 1rem;
+}
+
+#progress-bar-container {
+  width: 100%;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+#progress-bar {
+  width: 0;
+  height: 20px;
+  background-color: #4caf50;
+  transition: width 0.3s ease-in-out;
+}
+
+#step-count {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form-label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+#sp-footer {
+  background-color: #363839;
+  color: #b0b0b0;
+  text-align: center;
+  font-family: Open Sans, sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+#cardIconContainer {
+  display: flex;
+  justify-content: end;
+  padding-left: 1rem;
+  position: relative;
+}
+
+#creditCardNumber-error {
+  position: absolute;
+}
+
+.fab,
+.far {
+  font-size: 2.5rem;
+  position: absolute;
+  bottom: 0rem;
+  bottom: 0rem;
+  left: 85%;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#other-card-address {
+  flex-direction: column;
+}
+
+#other-card-address > div:nth-child(2) {
+  display: flex;
+  gap: 2rem;
+}
+
+.popup-content {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spinner-inner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.spinner-text {
+  margin-top: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Your button styles */
+.btn {
+  padding: 10px 20px;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(105, 108, 255, 0.4);
+  font-family: Arial, sans-serif;
+}
+
+.btn.btn-primary-pre {
+  background-color: #f44336;
+}
+
+.next-btn,
+.enext-btn,
+.anext-btn,
+.first-next-btn,
+.review-btn {
+  background-color: #5cb85c;
+}
+
+.previous-btn,
+.add-previous-btn {
+  background-color: #f0ad4e;
+}
+
+.btn.btn-primary-pre:hover {
+  background-color: #d32f2f;
+}
+
+/* Style the radio container */
+.radio-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Style the custom radio buttons */
+.radio-container input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+
+/* Style the custom radio buttons label */
+.radio-container label {
+  position: relative;
+  padding-left: 30px; /* Space for the custom radio button */
+  cursor: pointer;
+}
+
+/* Style the custom radio button */
+.radio-container label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e3e3e3; /* Border color for the custom radio button */
+  border-radius: 50%;
+}
+
+/* Style the custom radio button when it's checked */
+.radio-container input[type="radio"]:checked + label::before {
+  background-color: #7ccd44; /* Background color when checked */
+  border-color: #7ccd44; /* Border color when checked */
+}
+
+/* Style the custom radio button when hovering over the label */
+.radio-container label:hover::before {
+  border-color: #0056b3; /* Border color on hover */
+}
+
+/* CSS for the label */
+label[for="bqpDetails"] {
+  width: 20rem;
+  display: inline-block;
+  vertical-align: top; /* Align label text to the top of the input field */
+  margin-right: 1rem; /* Add some spacing between the label and input */
+}
+
+/* CSS for the input field */
+#bqpDetails {
+  width: 100%; /* Make the input field expand to fill its container */
+  padding: 0.5rem; /* Add some padding for better appearance */
+  border: 1px solid #ccc; /* Add a border for clarity */
+  border-radius: 4px; /* Add rounded corners */
+  box-sizing: border-box; /* Include padding and border in the total width */
+  margin-bottom: 1rem;
+}
+
+/* Credit Card Form Styles */
+.credit-card-container {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.credit-card-container h1 {
+  color: #002855;
+}
+
+.credit-card-form {
+  text-align: left;
+  padding: 10px;
+}
+
+.credit-card-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.credit-card-form input[type="text"],
+.credit-card-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.credit-card-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.credit-card-form .error-message {
+  color: #f44336;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.credit-card-form .btn-container {
+  text-align: center;
+}
+
+.section:nth-child(n + 3),
+#submit-button {
+  display: none;
+}
+
+.left-colomn,
+.right-colomn {
+  display: flex;
+  gap: 2rem;
+}
+
+#bqp-details > .right-colomn {
+  margin-bottom: 2rem;
+}
+
+
+.form-label {
+  margin-bottom: 5px;
+}
+#DOB{
+  margin-top: 1rem;
+}
+.form-input {
+  width: 100%; /* Make the input fields take up the full width of the form group */
+}
+
+#personal-info-form > div:nth-child(2) {
+  margin-top: 1.5rem;
+}
+
+.form-colomn {
+  display: flex;
+  gap: 1.5rem;
+  margin-right: 1.25rem;
+  flex-direction: column;
+}
+
+.form-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.step-trigger {
+  border: none;
+  background-color: transparent;
+  transition: background-color 0.15s ease-out, color 0.15s ease-out;
+  color: #888;
+  font-weight: bold;
+}
+
+span.bs-stepper-label {
+  display: block;
+}
+
+.fa-chevron-right {
+  font-size: large;
+  color: #888;
+}
+
+button.step-trigger:first-child {
+  color: #7ccd44;
+}
+
+button.step-trigger {
+  padding: 2rem 2rem;
+}
+
+.nav-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0px;
+}
+
+textarea {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  border: 1px solid #ccc;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.eligibiliy-form > div > label,
+.eligibiliy-form > label {
+  font-weight: normal;
+  border: 1.5px solid #e3e3e3;
+  border-radius: 3px;
+  padding: 0.3rem 0rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.eligibiliy-form div > label > input,
+.eligibiliy-form > label > input {
+  -webkit-appearance: none; /* Remove default styles in Webkit browsers */
+  -moz-appearance: none; /* Remove default styles in Firefox */
+  appearance: none; /* Remove default styles in modern browsers */
+  min-width: 20px; /* Set the width to make it square */
+  min-height: 20px; /* Set the height to make it square */
+  border: 2px solid #e3e3e3; /* Add a border to create a square shape */
+  border-radius: 0; /* Remove any border-radius to make it square */
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.eligibiliy-form > div > label > input[type="radio"]:checked,
+.eligibiliy-form > label > input[type="radio"]:checked {
+  background-color: #7ccd44; /* Change the background color for the checked state */
+}
+
+
+@media screen and (max-width: 500px) {
+  .nav-bar-container,
+  .form-colomn,
+  #other-card-address > div:nth-child(2) {
+    flex-direction: column;
+  }
+
+  .fab,
+  .far {
+    left: 85%;
+  }
+
+  #DOB{
+    margin-top: 0rem;
+  }
+  #dependant-secondLastName{
+    margin-bottom: 30px;
+  }
+  div.review-section {
+    grid-template-columns: 1fr;
+  }
+
+  button.step-trigger {
+    padding: 1rem 0.5rem;
+  }
+  
+  .radio-container label{
+    font-size: 13px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #yeslabel,
+  #nolabel{
+    font-size: 20px;
+    margin-left: 1rem;
+  }
+
+  .radio-container {
+    display: flex;
+}
+  .radio-container label::before {
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+}
+
+.radio-container label{
+  padding-left: 13px;
+}
+
+  div.form-group {
+    margin-bottom: 4px;
+    margin-bottom: 4px;
+  }
+
+  .left-colomn,
+  .right-colomn {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .step-trigger:nth-child(n + 2) {
+    display: none;
+  }
+
+  i.fa-chevron-right {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .nav-bar-container {
+    flex-wrap: wrap;
+  }
+
+  .form-colomn {
+    flex-direction: column;
+  }
+
+  .left-colomn,
+  .right-colomn {
+    width: 100%;
+  }
+}
+
+.review-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-section {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px 0;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.review-item {
+  margin: 10px 0;
+  display: flex;
+}
+
+h1,
+h2 {
+  color: #333;
+}
+
+.review-content span {
+  font-weight: normal;
+  font-size: large;
+  color: #777;
+}
+
+.review-content span::before {
+  content: "  ";
+}
+
+input[type="file"] {
+  border-radius: 0px;
+  color: white;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}
