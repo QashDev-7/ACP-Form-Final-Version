@@ -406,10 +406,6 @@ label[for="bqpDetails"] {
   padding: 10px;
 }
 
-#DOD{
-  margin-top: 1rem;
-
-}
 .credit-card-form label {
   display: block;
   margin-bottom: 10px;
@@ -463,13 +459,10 @@ label[for="bqpDetails"] {
   margin-bottom: 2rem;
 }
 
-
 .form-label {
   margin-bottom: 5px;
 }
-#DOB{
-  margin-top: 1rem;
-}
+
 .form-input {
   width: 100%; /* Make the input fields take up the full width of the form group */
 }
@@ -562,7 +555,6 @@ textarea {
   background-color: #7ccd44; /* Change the background color for the checked state */
 }
 
-
 @media screen and (max-width: 500px) {
   .nav-bar-container,
   .form-colomn,
@@ -575,12 +567,6 @@ textarea {
     left: 85%;
   }
 
-  #DOB{
-    margin-top: 0rem;
-  }
-  #dependant-secondLastName{
-    margin-bottom: 30px;
-  }
   div.review-section {
     grid-template-columns: 1fr;
   }
@@ -588,35 +574,10 @@ textarea {
   button.step-trigger {
     padding: 1rem 0.5rem;
   }
-  
-  .radio-container label{
-    font-size: 13px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-  #DOD{
-    margin-top: 0rem;
-  
-  }
 
-  #yeslabel,
-  #nolabel{
-    font-size: 20px;
-    margin-left: 1rem;
+  .form-label {
+    margin-bottom: 0;
   }
-
-  .radio-container {
-    display: flex;
-}
-  .radio-container label::before {
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-}
-
-.radio-container label{
-  padding-left: 13px;
-}
 
   div.form-group {
     margin-bottom: 4px;

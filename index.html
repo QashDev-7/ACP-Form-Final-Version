@@ -384,6 +384,7 @@
           <h1 style="display: inline">Eligibility Programs</h1>
           <span> </span>
           <h1 style="display: inline">(*)</h1>
+          <span id="elgibility-error" class="error-message"> </span>
 
           <form class="eligibiliy-form" id="enrollment-form">
             <div>
@@ -557,7 +558,7 @@
                     name="firstName"
                     class="form-input"
                     required
-                    oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+                    oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                   />
                 </div>
 
@@ -568,7 +569,7 @@
                     id="middleName"
                     name="middleName"
                     class="form-input"
-                    oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+                    oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                   />
                 </div>
 
@@ -580,7 +581,7 @@
                     name="lastName"
                     class="form-input"
                     required
-                    oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+                    oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                   />
                 </div>
                 <div class="form-group">
@@ -592,7 +593,7 @@
                     id="secondLastName"
                     name="secondLastName"
                     class="form-input"
-                    oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+                    oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                   />
                 </div>
               </div>
@@ -636,9 +637,9 @@
               </label>
               <div class="radio-container">
                 <input type="radio" name="bqp" id="yes" value="yes" />
-                <label for="yes" id="yeslabel"> Yes </label>
+                <label for="yes"> Yes </label>
                 <input type="radio" name="bqp" id="no" value="no" checked />
-                <label for="no" id="nolabel"> No </label>
+                <label for="no"> No </label>
               </div>
 
               <!-- Input field for BQP details -->
@@ -655,7 +656,7 @@
                       name="firstName"
                       class="form-input"
                       required
-                      oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+                      oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                     />
                   </div>
 
@@ -669,7 +670,7 @@
                       id="dependant-middleName"
                       name="middleName"
                       class="form-input"
-                      oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+                      oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                     />
                   </div>
 
@@ -684,11 +685,11 @@
                       name="lastName"
                       class="form-input"
                       required
-                      oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+                      oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                     />
                   </div>
                   <div class="form-group">
-                    <label for="dependant-secondLastName" class="form-label" 
+                    <label for="dependant-secondLastName" class="form-label"
                       >SecondLastName(dependent)</label
                     >
                     <input
@@ -696,14 +697,14 @@
                       id="dependant-secondLastName"
                       name="secondLastName"
                       class="form-input"
-                      oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+                      oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                     />
                   </div>
                 </div>
 
                 <div class="right-colomn">
                   <div class="form-group">
-                    <label for="dependant-dob" class="form-label" id= "DOD"
+                    <label for="dependant-dob" class="form-label"
                       >Date of Birth(dependent)(*)</label
                     >
                     <input
@@ -718,7 +719,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="dependant-ssn" class="form-label" id="DOB"
+                    <label for="dependant-ssn" class="form-label"
                       >Last 4 digits of your SSN(dependent)(*)</label
                     >
                     <input
@@ -755,6 +756,8 @@
                 <label class="form-label"
                   >What is the best way to reach you? (*)</label
                 >
+                <input type="hidden" id="reachMethod" />
+                <span class="error-message"></span>
                 <div class="radio-container">
                   <input
                     type="radio"
@@ -832,6 +835,7 @@
                   name="address"
                   class="form-input"
                 />
+                <span class="error-message" id="address-error"></span>
               </div>
 
               <div class="right-colomn">
@@ -931,6 +935,8 @@
               </div>
               <div class="form-group">
                 <label class="form-label">My Residential Address is(*)</label>
+                <input type="hidden" id="residentialAddress" />
+                <span class="error-message"></span>
                 <div class="radio-container">
                   <input
                     type="radio"
@@ -975,7 +981,10 @@
                 >I hereby certify that I have read and understood the
                 disclosures listed below regarding activation and usage
                 requirements.</label
-              >
+              ><br />
+              <label style="display: none">Please accept the terms</label>
+              <input type="hidden" id="diclosre-terms" />
+              <span class="error-message"></span>
             </div>
             <div class="form-group">
               <textarea
@@ -1098,7 +1107,7 @@ I understand that ACP benefits are limited to one per household. If I am found t
                     name="firstNameOnCard"
                     class="form-input"
                     required
-                    oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+                    oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                   />
                   <span class="error-message" id="firstNameOnCard-error"></span>
                 </div>
@@ -1113,7 +1122,7 @@ I understand that ACP benefits are limited to one per household. If I am found t
                     name="lastNameOnCard"
                     class="form-input"
                     required
-                    oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');"
+                    oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                   />
                   <span class="error-message" id="lastNameOnCard-error"></span>
                 </div>
