@@ -470,7 +470,11 @@
                 qualifying standard)
               </label>
             </div>
+
             <div id="additional-info" style="display: none">
+              <h1 style="display: inline">
+                Federal Public Housing Assistance (FPHA)
+              </h1>
               <h2>Please select your housing assistance program(*)</h2>
               <label>
                 <input type="radio" name="housingAssistance" value="HCV" />
@@ -503,11 +507,13 @@
             </div>
 
             <div id="school-name-field" style="display: none">
+              <h1 id="schoolNameHeading" style="display: inline"></h1>
               <h2>School Name(*)</h2>
               <input type="text" id="schoolName" name="schoolName" />
             </div>
 
             <div id="household-info" style="display: none">
+              <h1 style="display: inline">Qualify through my Income</h1>
               <h2>Number of People in Your Household(*)</h2>
               <input
                 type="text"
@@ -517,6 +523,7 @@
                 oninput="this.value = this.value.replace(/[^0-9]/g, '');"
               />
             </div>
+
             <div class="form-button add-form-button" style="display: none">
               <input
                 class="btn add-previous-btn"
@@ -557,7 +564,6 @@
                     id="firstName"
                     name="firstName"
                     class="form-input"
-                    required
                     oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                   />
                 </div>
@@ -580,7 +586,6 @@
                     id="lastName"
                     name="lastName"
                     class="form-input"
-                    required
                     oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                   />
                 </div>
@@ -607,7 +612,6 @@
                     name="dob"
                     class="form-input"
                     placeholder="MM/DD/YYYY"
-                    required
                   />
                   <span class="error-message" id="dob-error"></span>
                 </div>
@@ -622,7 +626,6 @@
                     name="ssn"
                     class="form-input"
                     placeholder="XXX-XX-"
-                    required
                   />
                   <span class="error-message" id="ssn-error"></span>
                 </div>
@@ -655,7 +658,6 @@
                       id="dependant-firstName"
                       name="firstName"
                       class="form-input"
-                      required
                       oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                     />
                   </div>
@@ -684,7 +686,6 @@
                       id="dependant-lastName"
                       name="lastName"
                       class="form-input"
-                      required
                       oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                     />
                   </div>
@@ -713,7 +714,6 @@
                       name="dob"
                       class="form-input"
                       placeholder="MM/DD/YYYY"
-                      required
                     />
                     <span class="error-message" id="dob-error"></span>
                   </div>
@@ -728,7 +728,6 @@
                       name="ssn"
                       class="form-input"
                       placeholder="XXX-XX-"
-                      required
                     />
                     <span class="error-message" id="ssn-error"></span>
                   </div>
@@ -764,7 +763,6 @@
                     id="reachByEmail"
                     name="reachMethod"
                     value="Email"
-                    required
                   />
                   <label for="reachByEmail">Email</label>
 
@@ -773,7 +771,6 @@
                     id="reachByPhone"
                     name="reachMethod"
                     value="Phone"
-                    required
                   />
                   <label for="reachByPhone">Phone</label>
 
@@ -782,7 +779,6 @@
                     id="reachByText"
                     name="reachMethod"
                     value="Text Message"
-                    required
                   />
 
                   <label for="reachByText">Text Message</label>
@@ -792,7 +788,6 @@
                     id="reachByMail"
                     name="reachMethod"
                     value="Mail"
-                    required
                   />
                   <label for="reachByMail">Mail</label>
                 </div>
@@ -809,7 +804,6 @@
                     name="phone"
                     class="form-input"
                     placeholder="XXX-XXX-XXXX"
-                    required
                   />
                   <span class="error-message" id="phone-error"></span>
                 </div>
@@ -822,13 +816,12 @@
                     name="email"
                     class="form-input"
                     placeholder="example@gmail.com"
-                    required
                   />
                   <span class="error-message" id="email-error"></span>
                 </div>
               </div>
               <div class="form-group">
-                <label for="address" class="form-label">Address</label>
+                <label for="address" class="form-label">Address(*)</label>
                 <input
                   type="text"
                   id="address"
@@ -853,7 +846,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="city" class="form-label">City</label>
+                  <label for="city" class="form-label">City(*)</label>
                   <input
                     type="text"
                     id="city"
@@ -864,7 +857,7 @@
                 </div>
 
                 <div class="form-group" style="min-width: 25%">
-                  <label for="state" class="form-label">State</label>
+                  <label for="state" class="form-label">State(*)</label>
                   <select id="state" name="state" class="form-input">
                     <option value="Select A State">Select A State</option>
                     <option value="Alabama">Alabama</option>
@@ -921,14 +914,13 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="zipCode" class="form-label">Zip Code</label>
+                  <label for="zipCode" class="form-label">Zip Code(*)</label>
                   <input
                     type="text"
                     id="zipCode"
                     name="zipCode"
                     class="form-input"
                     placeholder="XXXXX"
-                    required
                   />
                   <span class="error-message" id="zipCode-error"></span>
                 </div>
@@ -943,7 +935,6 @@
                     id="temporary"
                     name="residentialAddress"
                     value="Temporary"
-                    required
                   />
                   <label for="temporary" class="radio-label">Temporary</label>
 
@@ -996,7 +987,7 @@
                   margin-bottom: 20px;
                 "
               >
-I authorize SWA Connect and its contracted partners, for the purpose of applying for, determining eligibility, enrolling in and seeking reimbursement of Affordable Connectivity Program service and device benefits, to collect, use, share and retain my personal information, including but not limited to information required for the purpose of establishing eligibility for and enrolling in the ACP, and including, but not limited to, full name, full residential address, date of birth, last four digits of social security number, telephone number, eligibility criteria and status, the date on which the ACP service discount was initiated and if applicable, terminated, ACP connected device distribution date/ type/make and model/status, usage status and other compliance requirements, the amount of support being sought for the service and/or device, and information necessary to establish identity and verifiable address, to the Universal Service Administrative Company (USAC) to ensure proper administration of the ACP service and/ or connected device benefits. Failure to provide consent will result in me being denied the Emergency Broadband Benefit service and/ or the connected device benefits. 
+I authorize SWA Connect and its contracted partners, for the purpose of applying for, determining eligibility, enrolling in and seeking reimbursement of Affordable Connectivity Program service and device benefits, to collect, use, share and retain my personal information, including but not limited to information   for the purpose of establishing eligibility for and enrolling in the ACP, and including, but not limited to, full name, full residential address, date of birth, last four digits of social security number, telephone number, eligibility criteria and status, the date on which the ACP service discount was initiated and if applicable, terminated, ACP connected device distribution date/ type/make and model/status, usage status and other compliance requirements, the amount of support being sought for the service and/or device, and information necessary to establish identity and verifiable address, to the Universal Service Administrative Company (USAC) to ensure proper administration of the ACP service and/ or connected device benefits. Failure to provide consent will result in me being denied the Emergency Broadband Benefit service and/ or the connected device benefits. 
 I agree that any state, local, Tribal government, school or school district, may share information about my receipt of benefits that would establish eligibility for the ACP, and that such information will be used only to determine ACP eligibility.
 I give express consent for SWA Connect and its contracted partners to contact me to validate my eligibility for or desire to participate in SWA Connect's ACP offers, and other products and services via email, telephone, or text messaging. Text messaging and data rates may apply. Consent for calls and texts is optional and can be revoked at any time. For more information see our Terms and Conditions and Privacy Policy at www.swaconnect.com.
 I understand that the Affordable Connectivity Program connected device discount is limited to one per household. If I received a connected device discount with SWA Connect as part of the ACP program, I certify that I was charged $11.00 for the connected device. Additionally, I certify that to the best of my knowledge that no one in my household has received a connected device discount with the Affordable Connectivity Program.
@@ -1054,7 +1045,6 @@ I understand that ACP benefits are limited to one per household. If I am found t
                     name="creditCardNumber"
                     class="form-input"
                     placeholder="XXXX XXXX XXXX XXXX"
-                    required
                   />
                   <span
                     class="error-message"
@@ -1075,7 +1065,6 @@ I understand that ACP benefits are limited to one per household. If I am found t
                     name="expDate"
                     class="form-input"
                     placeholder="MM/YYYY"
-                    required
                   />
                   <span class="error-message" id="expDate-error"></span>
                 </div>
@@ -1090,7 +1079,6 @@ I understand that ACP benefits are limited to one per household. If I am found t
                     name="cvvCode"
                     class="form-input"
                     placeholder="XXX"
-                    required
                   />
                   <span class="error-message" id="cvvCode-error"></span>
                 </div>
@@ -1106,7 +1094,6 @@ I understand that ACP benefits are limited to one per household. If I am found t
                     id="firstNameOnCard"
                     name="firstNameOnCard"
                     class="form-input"
-                    required
                     oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                   />
                   <span class="error-message" id="firstNameOnCard-error"></span>
@@ -1121,7 +1108,6 @@ I understand that ACP benefits are limited to one per household. If I am found t
                     id="lastNameOnCard"
                     name="lastNameOnCard"
                     class="form-input"
-                    required
                     oninput="this.value = this.value.replace(/[^a-zA-Z\-']/g, '');"
                   />
                   <span class="error-message" id="lastNameOnCard-error"></span>
@@ -1135,7 +1121,6 @@ I understand that ACP benefits are limited to one per household. If I am found t
                     id="shipping-address"
                     name="card-address"
                     value="shipping-address"
-                    required
                     checked
                   />
                   <label for="shipping-address" class="radio-label"
@@ -1174,7 +1159,6 @@ I understand that ACP benefits are limited to one per household. If I am found t
                       id="addressOnCard"
                       name="addressOnCard"
                       class="form-input"
-                      required
                     />
                     <span class="error-message" id="addressOnCard-error"></span>
                   </div>
@@ -1190,22 +1174,71 @@ I understand that ACP benefits are limited to one per household. If I am found t
                       id="cityOnCard"
                       name="cityOnCard"
                       class="form-input"
-                      required
                     />
                     <span class="error-message" id="cityOnCard-error"></span>
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group" style="min-width: 25%">
                     <label for="stateOnCard" class="form-label" id="pg2-label"
                       >State on Credit Card(*)</label
                     >
-                    <input
-                      type="text"
+                    <select
                       id="stateOnCard"
                       name="stateOnCard"
                       class="form-input"
-                      required
-                    />
+                    >
+                      <option value="Select A State">Select A State</option>
+                      <option value="Alabama">Alabama</option>
+                      <option value="Alaska">Alaska</option>
+                      <option value="Arizona">Arizona</option>
+                      <option value="Arkansas">Arkansas</option>
+                      <option value="California">California</option>
+                      <option value="Colorado">Colorado</option>
+                      <option value="Connecticut">Connecticut</option>
+                      <option value="Delaware">Delaware</option>
+                      <option value="Florida">Florida</option>
+                      <option value="Georgia">Georgia</option>
+                      <option value="Hawaii">Hawaii</option>
+                      <option value="Idaho">Idaho</option>
+                      <option value="Illinois">Illinois</option>
+                      <option value="Indiana">Indiana</option>
+                      <option value="Iowa">Iowa</option>
+                      <option value="Kansas">Kansas</option>
+                      <option value="Kentucky">Kentucky</option>
+                      <option value="Louisiana">Louisiana</option>
+                      <option value="Maine">Maine</option>
+                      <option value="Maryland">Maryland</option>
+                      <option value="Massachusetts">Massachusetts</option>
+                      <option value="Michigan">Michigan</option>
+                      <option value="Minnesota">Minnesota</option>
+                      <option value="Mississippi">Mississippi</option>
+                      <option value="Missouri">Missouri</option>
+                      <option value="Montana">Montana</option>
+                      <option value="Nebraska">Nebraska</option>
+                      <option value="Nevada">Nevada</option>
+                      <option value="New Hampshire">New Hampshire</option>
+                      <option value="New Jersey">New Jersey</option>
+                      <option value="New Mexico">New Mexico</option>
+                      <option value="New York">New York</option>
+                      <option value="North Carolina">North Carolina</option>
+                      <option value="North Dakota">North Dakota</option>
+                      <option value="Ohio">Ohio</option>
+                      <option value="Oklahoma">Oklahoma</option>
+                      <option value="Oregon">Oregon</option>
+                      <option value="Pennsylvania">Pennsylvania</option>
+                      <option value="Rhode Island">Rhode Island</option>
+                      <option value="South Carolina">South Carolina</option>
+                      <option value="South Dakota">South Dakota</option>
+                      <option value="Tennessee">Tennessee</option>
+                      <option value="Texas">Texas</option>
+                      <option value="Utah">Utah</option>
+                      <option value="Vermont">Vermont</option>
+                      <option value="Virginia">Virginia</option>
+                      <option value="Washington">Washington</option>
+                      <option value="West Virginia">West Virginia</option>
+                      <option value="Wisconsin">Wisconsin</option>
+                      <option value="Wyoming">Wyoming</option>
+                    </select>
                     <span class="error-message" id="stateOnCard-error"></span>
                   </div>
 
@@ -1218,7 +1251,7 @@ I understand that ACP benefits are limited to one per household. If I am found t
                       id="zipCodeOnCard"
                       name="zipCodeOnCard"
                       class="form-input"
-                      required
+                      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
                     />
                     <span class="error-message" id="zipCodeOnCard-error"></span>
                   </div>
@@ -1239,6 +1272,10 @@ I understand that ACP benefits are limited to one per household. If I am found t
 
         <section class="section">
           <span class="hidden">Review</span>
+          <h1>Eligibility</h1>
+          <div class="review-section" style="display: flex">
+            <span id="reviewEligibility"></span>
+          </div>
           <h1>Review Information</h1>
           <div class="review-content">
             <!-- Review Personal Information -->
@@ -1270,6 +1307,38 @@ I understand that ACP benefits are limited to one per household. If I am found t
               </div>
             </div>
 
+            <h2 id="dependant-heading">Dependant Information</h2>
+            <div id="dependant-section" class="review-section">
+              <div class="review-item">
+                <label for="dependant-firstName">Dependant First Name: </label>
+                <span id="reviewDependantFirstName"></span>
+              </div>
+              <div class="review-item">
+                <label for="dependant-middleName"
+                  >Dependant Middle Name:
+                </label>
+                <span id="reviewDependantMiddleName"></span>
+              </div>
+              <div class="review-item">
+                <label for="dependant-lastName">Dependant Last Name: </label>
+                <span id="reviewDependantLastName"></span>
+              </div>
+              <div class="review-item">
+                <label style="width: 10rem" for="dependant-secondLastName"
+                  >Dependant Second Last Name:
+                </label>
+                <span id="reviewDependantSecondLastName"></span>
+              </div>
+              <div class="review-item">
+                <label for="dependant-dob">Dependant Date of Birth: </label>
+                <span id="reviewDependantDOB"></span>
+              </div>
+              <div class="review-item">
+                <label for="dependant-ssn">Dependant SSN Digits: </label>
+                <span id="reviewDependantSSN"></span>
+              </div>
+            </div>
+
             <!-- Review Contact Information -->
             <h2>Contact Information</h2>
             <div class="review-section">
@@ -1286,28 +1355,28 @@ I understand that ACP benefits are limited to one per household. If I am found t
                 <span id="reviewEmail"></span>
               </div>
               <div class="review-item">
-                <label for="aptFloorOther">Apt/Floor/Other : </label>
-                <span id="reviewAptFloorOther"></span>
+                <label for="address">Address :</label>
+                <span id="reviewAddress"></span>
               </div>
               <div class="review-item">
-                <label for="residentialAddress">Residential : </label>
-                <span id="reviewResidentialAddress"></span>
+                <label for="aptFloorOther">Apt/Floor/Other : </label>
+                <span id="reviewAptFloorOther"></span>
               </div>
               <div class="review-item">
                 <label for="city">City : </label>
                 <span id="reviewCity"></span>
               </div>
               <div class="review-item">
-                <label for="zipCode">Zip Code : </label>
-                <span id="reviewZipCode"></span>
-              </div>
-              <div class="review-item">
                 <label for="state">State : </label>
                 <span id="reviewState"></span>
               </div>
               <div class="review-item">
-                <label for="address">Address :</label>
-                <span id="reviewAddress"></span>
+                <label for="zipCode">Zip Code : </label>
+                <span id="reviewZipCode"></span>
+              </div>
+              <div class="review-item">
+                <label for="residentialAddress">Residential : </label>
+                <span id="reviewResidentialAddress"></span>
               </div>
             </div>
 
@@ -1334,22 +1403,21 @@ I understand that ACP benefits are limited to one per household. If I am found t
                 <label for="expDate">Exp. Date : </label>
                 <span id="reviewExpDate"></span>
               </div>
-
+              <div class="review-item">
+                <label for="addressOnCard">Address on Card : </label>
+                <span id="reviewAddressOnCard"></span>
+              </div>
               <div class="review-item">
                 <label for="cityOnCard">City on Card : </label>
                 <span id="reviewCityOnCard"></span>
-              </div>
-              <div class="review-item">
-                <label for="zipCodeOnCard">Zip Code on Card : </label>
-                <span id="reviewZipCodeOnCard"></span>
               </div>
               <div class="review-item">
                 <label for="stateOnCard">State on Card : </label>
                 <span id="reviewStateOnCard"></span>
               </div>
               <div class="review-item">
-                <label for="addressOnCard">Address on Card : </label>
-                <span id="reviewAddressOnCard"></span>
+                <label for="zipCodeOnCard">Zip Code on Card : </label>
+                <span id="reviewZipCodeOnCard"></span>
               </div>
             </div>
           </div>

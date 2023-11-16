@@ -579,6 +579,7 @@ function validate() {
 
   // Function to handle changes for all radio buttons
   function handleRadioChange(event) {
+    document.getElementById("schoolNameHeading").innerText = "";
     const selectedValue = event.target.value;
     const container = this.parentElement.parentElement;
 
@@ -604,6 +605,8 @@ function validate() {
         buttonContainer.style.display = "flex";
         buttonContainer.nextElementSibling.style.display = "none";
         document.getElementById("yes").click();
+        document.getElementById("schoolNameHeading").innerText =
+          "Free & Reduced-Price School Lunch Program or School Breakfast Program";
         showSchoolNameField();
         break;
       case "Medicaid":
@@ -617,6 +620,8 @@ function validate() {
         container.style.display = "none";
         buttonContainer.style.display = "flex";
         buttonContainer.nextElementSibling.style.display = "none";
+        document.getElementById("schoolNameHeading").innerText =
+          "Qualify through my Income";
         showIncomeQualifySection();
         break;
       case "PellGrant":

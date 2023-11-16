@@ -65,13 +65,16 @@ export function checkPersonalInfoSection() {
     document.getElementById("reviewSSN").textContent = ssn.slice(7);
     ssnLabel.style.fontWeight = "normal"; // Reset label style
   }
+
   if (housingAssistanceOptions.value === "yes") {
     // Check for dependant-firstName
     const dependantFirstName = document.getElementById("dependant-firstName");
     const dependantFirstNameLabel = document.querySelector(
       'label[for="dependant-firstName"]'
     );
-    const reviewDependantFirstName = document.getElementById("reviewFirstName");
+    const reviewDependantFirstName = document.getElementById(
+      "reviewDependantFirstName"
+    );
 
     if (dependantFirstName.value === "") {
       dependantFirstName.focus();
@@ -88,7 +91,9 @@ export function checkPersonalInfoSection() {
     const dependantLastNameLabel = document.querySelector(
       'label[for="dependant-lastName"]'
     );
-    const reviewDependantLastName = document.getElementById("reviewLastName");
+    const reviewDependantLastName = document.getElementById(
+      "reviewDependantLastName"
+    );
 
     if (dependantLastName.value === "") {
       dependantLastName.focus();
@@ -104,7 +109,7 @@ export function checkPersonalInfoSection() {
     const dependantDOBLabel = document.querySelector(
       'label[for="dependant-dob"]'
     );
-    const reviewDependantDOB = document.getElementById("reviewDOB");
+    const reviewDependantDOB = document.getElementById("reviewDependantDOB");
 
     if (dependantDOB.value === "") {
       dependantDOB.focus();
@@ -130,14 +135,14 @@ export function checkPersonalInfoSection() {
     const dependantSSNLabel = document.querySelector(
       'label[for="dependant-ssn"]'
     );
-    const reviewDependantSSN = document.getElementById("reviewSSN");
+    const reviewDependantSSN = document.getElementById("reviewDependantSSN");
 
     if (dependantSSN.value === "") {
       dependantSSN.focus();
       dependantSSNLabel.style.fontWeight = "bold";
       throw new Error("dependant-ssn"); // Change error message to include ID
     } else {
-      reviewDependantSSN.textContent = dependantSSN.value.slice(12);
+      reviewDependantSSN.textContent = dependantSSN.value.slice(7);
       dependantSSNLabel.style.fontWeight = "normal"; // Reset label style
     }
   }
@@ -186,6 +191,64 @@ export function checkContactInfoSection() {
     throw new Error("email"); // Change error message to include ID
   } else {
     document.getElementById("reviewEmail").textContent = email;
+  }
+
+  const addressInput = document.getElementById("address");
+  const addressLabel = document.querySelector('label[for="address"]');
+  const addressErrorMessage = document.getElementById("address-error");
+  const address = addressInput.value;
+
+  if (address === "") {
+    addressLabel.style.fontWeight = "bold";
+    addressInput.focus();
+    addressErrorMessage.textContent = "Address is required.";
+    throw new Error("address");
+  } else {
+    // Your logic for a valid address goes here
+    addressLabel.style.fontWeight = "normal"; // Reset label style
+    addressErrorMessage.textContent = ""; // Clear any previous error message
+  }
+
+  const cityInput = document.getElementById("city");
+  const cityLabel = document.querySelector('label[for="city"]');
+  const city = cityInput.value;
+
+  if (city === "") {
+    cityLabel.style.fontWeight = "bold";
+    cityInput.focus();
+    throw new Error("city");
+  } else {
+    // Your logic for a valid city goes here
+    cityLabel.style.fontWeight = "normal"; // Reset label style
+  }
+
+  const stateSelect = document.getElementById("state");
+  const stateLabel = document.querySelector('label[for="state"]');
+  const selectedState = stateSelect.value;
+
+  if (selectedState === "Select A State") {
+    stateLabel.style.fontWeight = "bold";
+    stateSelect.focus();
+    throw new Error("state");
+  } else {
+    // Your logic for a valid selected state goes here
+    stateLabel.style.fontWeight = "normal"; // Reset label style
+  }
+
+  const zipCodeInput = document.getElementById("zipCode");
+  const zipCodeLabel = document.querySelector('label[for="zipCode"]');
+  const zipCodeErrorMessage = document.getElementById("zipCode-error");
+  const zipCode = zipCodeInput.value;
+
+  if (zipCode === "") {
+    zipCodeLabel.style.fontWeight = "bold";
+    zipCodeInput.focus();
+    zipCodeErrorMessage.textContent = "Zip Code is required.";
+    throw new Error("zipCode");
+  } else {
+    // Your logic for a valid zip code goes here
+    zipCodeLabel.style.fontWeight = "normal"; // Reset label style
+    zipCodeErrorMessage.textContent = ""; // Clear any previous error message
   }
 
   try {

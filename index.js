@@ -51,6 +51,14 @@ function cardAddress() {
     }, ${document.getElementById("zipCode").value}`;
 
     document.getElementById("card-address-value").textContent = content;
+    document.getElementById("reviewAddressOnCard").textContent =
+      document.getElementById("address").value;
+    document.getElementById("reviewCityOnCard").textContent =
+      document.getElementById("city").value;
+    document.getElementById("reviewStateOnCard").textContent =
+      document.getElementById("state").value;
+    document.getElementById("reviewZipCodeOnCard").textContent =
+      document.getElementById("zipCode").value;
   } else {
     document.getElementById("card-address-value").textContent = "";
   }
@@ -60,6 +68,10 @@ document.getElementById("other-address").addEventListener("change", (event) => {
   if (event.target.checked === true) {
     document.getElementById("other-card-address").style.display = "flex";
     document.getElementById("card-address-value").textContent = "";
+    document.getElementById("reviewAddressOnCard").value = "";
+    document.getElementById("reviewCityOnCard").value = "";
+    document.getElementById("reviewStateOnCard").value = "";
+    document.getElementById("reviewZipCodeOnCard").value = "";
   } else {
     document.getElementById("other-card-address").style.display = "none";
   }
@@ -273,21 +285,36 @@ function updateReviewSection(event) {
   }
 
   try {
-    const lastName = document.getElementById("lastName").value;
+    const eligibilityValue = document.querySelector(
+      "input[name=eligibility]:checked"
+    ).parentElement.innerText;
+    console.log(eligibilityValue);
+    document.getElementById("reviewEligibility").innerText =
+      eligibilityValue.replace(/\s+/g, "");
 
+    const lastName = document.getElementById("lastName").value;
     document.getElementById("reviewLastName").textContent = lastName;
 
     const secondLastName = document.getElementById("secondLastName").value;
-
     document.getElementById("reviewSecondLastName").textContent =
       secondLastName;
 
     const middleName = document.getElementById("middleName").value;
-
     document.getElementById("reviewMiddleName").textContent = middleName;
 
-    const address = document.getElementById("address").value;
+    const reviewsecondLastName = document.getElementById(
+      "dependant-secondLastName"
+    ).value;
+    document.getElementById("reviewDependantSecondLastName").textContent =
+      reviewsecondLastName;
 
+    const reviewmiddleName = document.getElementById(
+      "dependant-middleName"
+    ).value;
+    document.getElementById("reviewDependantMiddleName").textContent =
+      reviewmiddleName;
+
+    const address = document.getElementById("address").value;
     document.getElementById("reviewAddress").textContent = address;
 
     const aptFloorOther = document.getElementById("aptFloorOther").value;
@@ -305,6 +332,16 @@ function updateReviewSection(event) {
     const state = document.getElementById("state").value;
 
     document.getElementById("reviewState").textContent = state;
+
+    const checkBqp = document.querySelector("input[name=bqp]:checked");
+
+    if (checkBqp.value === "no") {
+      document.getElementById("dependant-heading").style.display = "none";
+      document.getElementById("dependant-section").style.display = "none";
+    } else {
+      document.getElementById("dependant-heading").style.display = "block";
+      document.getElementById("dependant-section").style.display = "grid";
+    }
   } catch (error) {
     console.log(error.message);
   }
